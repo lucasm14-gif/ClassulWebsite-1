@@ -119,14 +119,14 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={scrollToProducts} 
-                className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold px-8 py-6 text-base shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-6 text-base shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all"
               >
                 Nossos produtos <ArrowDown className="ml-2 h-4 w-4 animate-bounce" />
               </Button>
               
               <Button
                 variant="outline"
-                className="border-white hover:bg-white/10 text-white font-semibold px-8 py-6 text-base hover:-translate-y-1 transition-all"
+                className="border-white hover:bg-white/10 text-white font-semibold px-8 py-6 text-base hover:-translate-y-1 transition-all bg-transparent"
                 asChild
               >
                 <a 
