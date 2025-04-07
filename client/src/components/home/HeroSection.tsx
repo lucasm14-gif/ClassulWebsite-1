@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Award, Star, ShieldCheck, Calendar, CheckCircle, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { FaWhatsapp } from "react-icons/fa";
+import { HERO_IMAGE } from "@/lib/constants";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -192,13 +193,11 @@ const HeroSection = () => {
               <div className="absolute -inset-3 bg-white/20 blur-xl rounded-xl"></div>
               <div className="relative rounded-xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.01] duration-500 border border-white/20">
                 <img 
-                  src={[
-                    "https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                  ][0]} 
-                  alt="Placa de homenagem Classul" 
+                  src={HERO_IMAGE.url} 
+                  alt={HERO_IMAGE.alt} 
                   className="w-full rounded-xl object-cover h-[300px] md:h-[450px]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent rounded-xl"></div>
+                <div className={`absolute inset-0 ${HERO_IMAGE.gradient} rounded-xl`}></div>
                 
                 {/* Floating badges */}
                 <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">

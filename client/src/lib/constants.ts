@@ -42,3 +42,10 @@ export const CASE_COLORS = [
   { id: "navy", label: "Azul Marinho", color: "bg-blue-900" },
   { id: "red", label: "Vermelho", color: "bg-red-700" }
 ];
+
+// Hero section image and gradient (easily customizable)
+export const HERO_IMAGE = {
+  url: "https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+  alt: "Placa de homenagem Classul",
+  gradient: "bg-gradient-to-t from-primary/70 via-transparent to-transparent"
+};
