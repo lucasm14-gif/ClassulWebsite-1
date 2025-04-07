@@ -20,7 +20,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: var(--brand-green);
+    --primary: var(--brand-red);
     --primary-foreground: 0 0% 98%;
 
     --secondary: var(--brand-yellow);
@@ -29,7 +29,7 @@
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: var(--brand-red);
+    --accent: var(--brand-green);
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,7 +37,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: var(--brand-green);
+    --ring: var(--brand-red);
 
     --radius: 0.5rem;
   }
@@ -106,4 +106,19 @@
   .product-card:hover {
     @apply -translate-y-1 shadow-lg;
   }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
 }

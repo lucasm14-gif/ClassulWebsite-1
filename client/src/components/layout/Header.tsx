@@ -87,8 +87,9 @@ const Header = () => {
       <div className="container py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <img src={classulLogo} alt="Classul Logo" className="h-14" />
+          <Link href="/" className="flex items-center relative group">
+            <div className="absolute -inset-2 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+            <img src={classulLogo} alt="Classul Logo" className="h-14 relative z-10 transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
