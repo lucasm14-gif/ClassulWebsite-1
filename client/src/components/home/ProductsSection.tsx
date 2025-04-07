@@ -105,7 +105,7 @@ const ProductsSection = () => {
         <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-secondary/10 rounded-full"></div>
         
         <div className="p-4 bg-primary/10 rounded-full mb-5 group-hover:bg-primary/20 transition-all relative">
-          <Award className="h-8 w-8 text-primary" />
+          <Award className="h-8 w-8 text-secondary" />
         </div>
         <h3 className="text-xl font-semibold mb-3 text-gray-800">Qualidade Premium</h3>
         <p className="text-gray-600">Materiais de alta qualidade e acabamento impecável em todos os nossos produtos desde 1971.</p>
@@ -118,7 +118,7 @@ const ProductsSection = () => {
         <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-secondary/10 rounded-full"></div>
         
         <div className="p-4 bg-primary/10 rounded-full mb-5 group-hover:bg-primary/20 transition-all">
-          <Sparkles className="h-8 w-8 text-primary" />
+          <Sparkles className="h-8 w-8 text-secondary" />
         </div>
         <h3 className="text-xl font-semibold mb-3 text-gray-800">Personalização</h3>
         <p className="text-gray-600">Produtos personalizados de acordo com suas necessidades, criando peças únicas e memoráveis.</p>
@@ -131,7 +131,7 @@ const ProductsSection = () => {
         <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-secondary/10 rounded-full"></div>
         
         <div className="p-4 bg-primary/10 rounded-full mb-5 group-hover:bg-primary/20 transition-all">
-          <ShieldCheck className="h-8 w-8 text-primary" />
+          <ShieldCheck className="h-8 w-8 text-secondary" />
         </div>
         <h3 className="text-xl font-semibold mb-3 text-gray-800">Garantia</h3>
         <p className="text-gray-600">Comprometimento com a satisfação do cliente e garantia de qualidade em cada produto.</p>
@@ -228,15 +228,15 @@ const ProductsSection = () => {
                   
                   <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
                     <div className="flex items-start">
-                      <div className="p-2 bg-primary/10 rounded-full mr-3">
-                        <CheckCircle className="h-5 w-5 text-primary" />
+                      <div className="p-2 bg-secondary/10 rounded-full mr-3">
+                        <CheckCircle className="h-5 w-5 text-secondary" />
                       </div>
                       <div className="text-gray-600">Atendimento personalizado</div>
                     </div>
                     
                     <div className="flex items-start">
-                      <div className="p-2 bg-primary/10 rounded-full mr-3">
-                        <Clock className="h-5 w-5 text-primary" />
+                      <div className="p-2 bg-secondary/10 rounded-full mr-3">
+                        <Clock className="h-5 w-5 text-secondary" />
                       </div>
                       <div className="text-gray-600">Entrega rápida</div>
                     </div>
@@ -244,7 +244,7 @@ const ProductsSection = () => {
                   
                   <div className="flex gap-4">
                     <Button 
-                      className="bg-primary hover:bg-primary/90 text-white"
+                      className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                       size="lg"
                       asChild
                     >
@@ -277,6 +277,7 @@ const ProductsSection = () => {
                   <div className="flex gap-2 items-center">
                     <div className="flex -space-x-2">
                       {[
+                        // Lista de URLs das imagens dos clientes - Edite facilmente as URLs abaixo
                         "https://placekitten.com/54/54",
                         "https://placekitten.com/55/55",
                         "https://placekitten.com/56/56"

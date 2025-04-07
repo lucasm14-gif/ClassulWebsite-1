@@ -142,14 +142,14 @@ const HeroSection = () => {
             {/* Features */}
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center bg-white/10 rounded-xl p-3 hover:bg-white/20 transition-colors group">
-                <div className="p-2 bg-accent/20 rounded-full mr-3 group-hover:bg-accent/30 transition-colors">
-                  <ShieldCheck className="h-5 w-5 text-accent" />
+                <div className="p-2 bg-secondary/20 rounded-full mr-3 group-hover:bg-secondary/30 transition-colors">
+                  <ShieldCheck className="h-5 w-5 text-secondary" />
                 </div>
                 <div>Garantia de qualidade</div>
               </div>
               <div className="flex items-center bg-white/10 rounded-xl p-3 hover:bg-white/20 transition-colors group">
-                <div className="p-2 bg-accent/20 rounded-full mr-3 group-hover:bg-accent/30 transition-colors">
-                  <Award className="h-5 w-5 text-accent" />
+                <div className="p-2 bg-secondary/20 rounded-full mr-3 group-hover:bg-secondary/30 transition-colors">
+                  <Award className="h-5 w-5 text-secondary" />
                 </div>
                 <div>Acabamento premium</div>
               </div>
@@ -161,6 +161,7 @@ const HeroSection = () => {
                 <div className="text-white/60 text-sm mr-6">Confiam em nós:</div>
                 <div className="flex -space-x-2">
                   {[
+                    // Lista de URLs das imagens dos clientes - Edite facilmente as URLs abaixo
                     "https://placekitten.com/50/50",
                     "https://placekitten.com/51/51",
                     "https://placekitten.com/52/52",
@@ -191,7 +192,9 @@ const HeroSection = () => {
               <div className="absolute -inset-3 bg-white/20 blur-xl rounded-xl"></div>
               <div className="relative rounded-xl overflow-hidden shadow-2xl transform transition-transform hover:scale-[1.01] duration-500 border border-white/20">
                 <img 
-                  src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                  src={[
+                    "https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  ][0]} 
                   alt="Placa de homenagem Classul" 
                   className="w-full rounded-xl object-cover h-[300px] md:h-[450px]"
                 />
@@ -200,7 +203,7 @@ const HeroSection = () => {
                 {/* Floating badges */}
                 <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="text-accent h-5 w-5" />
+                    <CheckCircle className="text-secondary h-5 w-5" />
                     <span className="text-white text-sm">Qualidade superior</span>
                   </div>
                 </div>
