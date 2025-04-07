@@ -8,9 +8,9 @@ export const products: Product[] = [
     shortDescription: "Eternize momentos especiais com nossas placas personalizadas.",
     description: "As placas de homenagem são uma forma elegante e duradoura de reconhecer conquistas, expressar gratidão ou comemorar ocasiões especiais. Cada placa é cuidadosamente produzida com materiais de alta qualidade e acabamento impecável.",
     images: [
-      "https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      "https://images.unsplash.com/photo-1568290747765-1b4a40ee6b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png"
     ],
     featured: true,
     options: {
