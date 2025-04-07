@@ -145,16 +145,6 @@ const ProductsSection = () => {
     <section className="relative">
       {/* Stylish arrow navigation */}
       <div className="bg-gradient-to-r from-primary/90 via-primary to-primary/90 py-10 text-center relative">
-        <div className="absolute left-0 right-0 -top-6">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" className="w-full h-12">
-            <path 
-              fill="currentColor" 
-              fillOpacity="1"
-              className="text-white" 
-              d="M0,32L80,37.3C160,43,320,53,480,42.7C640,32,800,0,960,0C1120,0,1280,32,1360,48L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-            ></path>
-          </svg>
-        </div>
       
         <div className="container relative">
           <a 
@@ -181,11 +171,6 @@ const ProductsSection = () => {
       <div id="produtos" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container">
           <div id="products-title" className={`text-center mb-20 max-w-3xl mx-auto transition-all duration-1000 ${animatedItems.title ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-accent/10 rounded-full text-accent mb-4">
-              <Badge variant="outline" className="bg-accent text-white border-0">Novo</Badge>
-              <span className="text-sm font-medium">Catálogo 2023-2024</span>
-            </div>
-            
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-800 relative inline-block">
               Nossos Produtos
               <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
@@ -291,9 +276,17 @@ const ProductsSection = () => {
                   
                   <div className="flex gap-2 items-center">
                     <div className="flex -space-x-2">
-                      {[...Array(3)].map((_, i) => (
-                        <div key={i} className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-xs">
-                          {String.fromCharCode(65 + i)}
+                      {[
+                        "https://placekitten.com/54/54",
+                        "https://placekitten.com/55/55",
+                        "https://placekitten.com/56/56"
+                      ].map((imageUrl, i) => (
+                        <div key={i} className="w-8 h-8 rounded-full overflow-hidden border border-white/30">
+                          <img 
+                            src={imageUrl} 
+                            alt={`Cliente ${i+1}`} 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       ))}
                     </div>

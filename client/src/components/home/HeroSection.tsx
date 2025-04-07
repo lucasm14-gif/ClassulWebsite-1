@@ -119,7 +119,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={scrollToProducts} 
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-6 text-base shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all"
+                className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold px-8 py-6 text-base shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all"
               >
                 Nossos produtos <ArrowDown className="ml-2 h-4 w-4 animate-bounce" />
               </Button>
@@ -160,9 +160,18 @@ const HeroSection = () => {
               <div className="flex items-center">
                 <div className="text-white/60 text-sm mr-6">Confiam em nós:</div>
                 <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-gray-300/20 border border-white/30 flex items-center justify-center text-xs font-medium">
-                      {["A", "B", "C", "D"][i]}
+                  {[
+                    "https://placekitten.com/50/50",
+                    "https://placekitten.com/51/51",
+                    "https://placekitten.com/52/52",
+                    "https://placekitten.com/53/53"
+                  ].map((imageUrl, i) => (
+                    <div key={i} className="w-8 h-8 rounded-full border border-white/30 overflow-hidden">
+                      <img 
+                        src={imageUrl} 
+                        alt={`Cliente ${i+1}`} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                   <div className="w-8 h-8 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-xs font-medium">
@@ -213,16 +222,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Bottom wave decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
-          <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z"
-          ></path>
-        </svg>
-      </div>
+
       
       {/* CSS for animations - implemented in index.css */}
     </section>

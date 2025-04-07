@@ -76,14 +76,7 @@ const Header = () => {
           : "bg-white shadow-md"
       }`}
     >
-      <div className="border-b border-primary/10">
-        <div className="container flex justify-end py-1">
-          <div className="text-sm text-gray-600 flex items-center">
-            <Badge variant="secondary" className="mr-2 text-xs font-normal">Desde 1971</Badge>
-            Empresa com mais de 50 anos de tradição
-          </div>
-        </div>
-      </div>
+
       <div className="container py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
