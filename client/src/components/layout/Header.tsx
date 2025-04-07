@@ -2,19 +2,41 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { NAV_LINKS } from "@/lib/constants";
 import classulLogo from "@assets/classul logo 144.png";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
+      // Detect scroll for header styling
       const isScrolled = window.scrollY > 10;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
+      }
+      
+      // Detect active section for menu highlighting
+      const sections = ["produtos", "sobre", "contato"];
+      let currentSection = "";
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+      
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
       }
     };
 
@@ -22,10 +44,29 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+  }, [scrolled, activeSection]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Function to scroll to section
+  const scrollToSection = (sectionId: string) => {
+    closeMenu();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Function to check if link is active
+  const isActive = (path: string) => {
+    if (path === "/") return location === "/";
+    if (path.includes("#")) {
+      const sectionId = path.split("#")[1];
+      return activeSection === sectionId;
+    }
+    return false;
+  };
 
   return (
     <header 
@@ -35,6 +76,14 @@ const Header = () => {
           : "bg-white shadow-md"
       }`}
     >
+      <div className="border-b border-primary/10">
+        <div className="container flex justify-end py-1">
+          <div className="text-sm text-gray-600 flex items-center">
+            <Badge variant="secondary" className="mr-2 text-xs font-normal">Desde 1971</Badge>
+            Empresa com mais de 50 anos de tradição
+          </div>
+        </div>
+      </div>
       <div className="container py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -45,23 +94,42 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">
             <div className="flex space-x-8 mr-6">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.path}
-                  href={link.path}
-                  className={`relative font-medium text-gray-800 hover:text-primary transition-colors py-2 ${
-                    location === link.path 
-                      ? "text-primary after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary after:rounded-full" 
-                      : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isAnchor = link.path.includes("#");
+                const sectionId = isAnchor ? link.path.split("#")[1] : "";
+                
+                return isAnchor ? (
+                  <button
+                    key={link.path}
+                    onClick={() => scrollToSection(sectionId)}
+                    className={`relative font-medium transition-colors py-2 ${
+                      isActive(link.path)
+                        ? "text-primary after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary after:rounded-full" 
+                        : "text-gray-800 hover:text-primary"
+                    }`}
+                  >
+                    {link.name === "Produtos" && (
+                      <ShoppingBag className="inline-block mr-1 h-4 w-4" />
+                    )}
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    className={`relative font-medium transition-colors py-2 ${
+                      isActive(link.path)
+                        ? "text-primary after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary after:rounded-full" 
+                        : "text-gray-800 hover:text-primary"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
             <Button 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-sm"
               onClick={() => window.location.href='tel:(51)3225-3965'}
             >
               <Phone className="mr-2 h-4 w-4" /> (51) 3225-3965
@@ -87,22 +155,39 @@ const Header = () => {
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 px-2 bg-white rounded-lg mt-2 shadow-lg">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                onClick={closeMenu}
-                className={`block py-3 px-4 font-medium text-gray-800 hover:bg-gray-50 rounded-lg transition-colors ${
-                  location === link.path ? "text-primary bg-gray-50" : ""
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isAnchor = link.path.includes("#");
+              const sectionId = isAnchor ? link.path.split("#")[1] : "";
+              
+              return isAnchor ? (
+                <button
+                  key={link.path}
+                  onClick={() => scrollToSection(sectionId)}
+                  className={`block w-full text-left py-3 px-4 font-medium hover:bg-gray-50 rounded-lg transition-colors ${
+                    isActive(link.path) ? "text-primary bg-primary/5" : "text-gray-800"
+                  }`}
+                >
+                  {link.name === "Produtos" && (
+                    <ShoppingBag className="inline-block mr-1 h-4 w-4" />
+                  )}
+                  {link.name}
+                </button>
+              ) : (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  onClick={closeMenu}
+                  className={`block py-3 px-4 font-medium hover:bg-gray-50 rounded-lg transition-colors ${
+                    isActive(link.path) ? "text-primary bg-primary/5" : "text-gray-800"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             <div className="mt-4 px-4">
               <Button 
-                variant="outline" 
-                className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-sm"
                 onClick={() => window.location.href='tel:(51)3225-3965'}
               >
                 <Phone className="mr-2 h-4 w-4" /> (51) 3225-3965

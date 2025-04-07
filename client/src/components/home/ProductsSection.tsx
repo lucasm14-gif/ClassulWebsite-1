@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import ProductCard from "../products/ProductCard";
 import { Product } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Award, ShieldCheck, Sparkles } from "lucide-react";
+import { Award, ShieldCheck, Sparkles, ChevronDown } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 
 const ProductsSection = () => {
   const { data: products, isLoading, error } = useQuery<Product[]>({
@@ -29,24 +30,24 @@ const ProductsSection = () => {
   // Features section component
   const Features = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-        <div className="p-3 bg-primary/10 rounded-full mb-4">
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center group hover:border-primary hover:shadow-xl transition-all duration-300">
+        <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-all">
           <Award className="h-8 w-8 text-primary" />
         </div>
         <h3 className="text-xl font-semibold mb-2 text-gray-800">Qualidade Premium</h3>
         <p className="text-gray-600">Materiais de alta qualidade e acabamento impecável em todos os nossos produtos desde 1971.</p>
       </div>
       
-      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-        <div className="p-3 bg-primary/10 rounded-full mb-4">
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center group hover:border-primary hover:shadow-xl transition-all duration-300">
+        <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-all">
           <Sparkles className="h-8 w-8 text-primary" />
         </div>
         <h3 className="text-xl font-semibold mb-2 text-gray-800">Personalização</h3>
         <p className="text-gray-600">Produtos personalizados de acordo com suas necessidades, criando peças únicas e memoráveis.</p>
       </div>
       
-      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-        <div className="p-3 bg-primary/10 rounded-full mb-4">
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center group hover:border-primary hover:shadow-xl transition-all duration-300">
+        <div className="p-3 bg-primary/10 rounded-full mb-4 group-hover:bg-primary/20 transition-all">
           <ShieldCheck className="h-8 w-8 text-primary" />
         </div>
         <h3 className="text-xl font-semibold mb-2 text-gray-800">Garantia</h3>
@@ -56,55 +57,78 @@ const ProductsSection = () => {
   );
 
   return (
-    <section id="produtos" className="py-20 bg-gray-50">
-      <div className="container">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4">
-            Catálogo Completo
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Nossos Produtos</h2>
-          <p className="text-gray-600 text-lg">
-            Descubra nossa linha completa de produtos para homenagens, premiações e reconhecimentos.
-            Cada peça é cuidadosamente produzida com materiais de alta qualidade.
-          </p>
+    <section className="relative">
+      {/* Green background section with arrow down */}
+      <div className="bg-primary py-8 text-center relative">
+        <div className="container">
+          <a 
+            href="#produtos" 
+            className="inline-flex items-center justify-center flex-col text-white transition-all"
+          >
+            <span className="text-lg font-medium mb-2">Ver nossos produtos</span>
+            <div className="bg-white/20 rounded-full p-2 animate-bounce">
+              <ChevronDown className="h-6 w-6" />
+            </div>
+          </a>
         </div>
-        
-        <Features />
-        
-        {isLoading ? (
-          <ProductsSkeleton />
-        ) : error ? (
-          <div className="text-center py-8 text-red-500">
-            Ocorreu um erro ao carregar os produtos. Por favor, tente novamente mais tarde.
+      </div>
+      
+      {/* Main products section */}
+      <div id="produtos" className="py-20 bg-gradient-to-b from-primary/5 to-white">
+        <div className="container">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <div className="inline-block px-3 py-1 bg-secondary/10 rounded-full text-secondary-foreground text-sm font-medium mb-4">
+              Catálogo Completo
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Nossos Produtos</h2>
+            <p className="text-gray-600 text-lg">
+              Descubra nossa linha completa de produtos para homenagens, premiações e reconhecimentos.
+              Cada peça é cuidadosamente produzida com materiais de alta qualidade.
+            </p>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {products?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
-        
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-white shadow-lg rounded-xl overflow-hidden">
-            <div className="flex flex-col sm:flex-row items-center">
-              <div className="p-6 sm:p-8 text-left">
-                <h3 className="text-2xl font-bold mb-2 text-gray-800">Produto não encontrado?</h3>
-                <p className="text-gray-600 mb-4">
-                  Entre em contato conosco e desenvolveremos uma solução personalizada para você.
-                </p>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=555189274761"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-semibold px-5 py-3 rounded-lg transition-colors"
-                >
-                  <FaWhatsapp className="mr-2 text-xl" /> Fale conosco
-                </a>
-              </div>
-              <div className="bg-gradient-to-br from-primary to-primary/80 p-6 sm:p-8 text-white">
-                <div className="text-4xl font-bold mb-2">+50</div>
-                <p className="uppercase tracking-wider font-medium">Anos de experiência</p>
+          
+          <Features />
+          
+          {isLoading ? (
+            <ProductsSkeleton />
+          ) : error ? (
+            <div className="text-center py-8 text-red-500">
+              Ocorreu um erro ao carregar os produtos. Por favor, tente novamente mais tarde.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+              {products?.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+          
+          <div className="mt-16 text-center">
+            <div className="inline-block bg-white shadow-xl rounded-xl overflow-hidden border border-gray-100">
+              <div className="flex flex-col sm:flex-row items-center">
+                <div className="p-6 sm:p-8 text-left">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-800">Produto não encontrado?</h3>
+                  <p className="text-gray-600 mb-6">
+                    Entre em contato conosco e desenvolveremos uma solução personalizada para você.
+                  </p>
+                  <Button 
+                    className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                    size="lg"
+                    asChild
+                  >
+                    <a 
+                      href="https://api.whatsapp.com/send?phone=555189274761"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <FaWhatsapp className="mr-2 text-xl" /> Fale conosco
+                    </a>
+                  </Button>
+                </div>
+                <div className="bg-gradient-to-br from-primary to-primary/80 p-6 sm:p-8 text-white w-full sm:w-auto">
+                  <div className="text-4xl font-bold mb-2">+50</div>
+                  <p className="uppercase tracking-wider font-medium">Anos de experiência</p>
+                </div>
               </div>
             </div>
           </div>
