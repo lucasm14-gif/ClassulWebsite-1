@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import ProductDetail from "@/components/products/ProductDetail";
 import CTASection from "@/components/home/CTASection";
 import { Product } from "@/types";
+import { useEffect } from "react";
 
 const ProductPage = () => {
   const { slug } = useParams();
@@ -11,6 +12,11 @@ const ProductPage = () => {
   const { data: product } = useQuery<Product>({
     queryKey: [`/api/products/${slug}`],
   });
+  
+  // Rolar para o topo da página quando o componente for montado
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   return (
     <>

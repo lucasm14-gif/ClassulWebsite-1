@@ -8,10 +8,12 @@ import NotFound from "@/pages/not-found";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import ScrollToTop from "@/components/utility/ScrollToTop";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Header />
       <main className="flex-grow">
         <Switch>

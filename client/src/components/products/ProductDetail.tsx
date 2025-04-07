@@ -9,7 +9,7 @@ import { ArrowLeft, ShieldCheck, Package, Clock } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface ProductDetailProps {
-  slug: string;
+  slug: string | null | undefined;
 }
 
 const ProductDetail = ({ slug }: ProductDetailProps) => {
