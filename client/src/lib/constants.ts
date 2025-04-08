@@ -49,3 +49,10 @@ export const HERO_IMAGE = {
   alt: "Placa de homenagem Classul",
   gradient: "bg-gradient-to-t from-primary/70 via-transparent to-transparent"
 };
+
+// About section image and overlay (easily customizable)
+export const ABOUT_IMAGE = {
+  url: "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-1.png",
+  alt: "Nossa história Classul",
+  overlay: "bg-primary/10"
+};

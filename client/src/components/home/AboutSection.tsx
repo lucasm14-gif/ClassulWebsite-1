@@ -1,4 +1,4 @@
-import { COMPANY_INFO, WHATSAPP_LINK } from "@/lib/constants";
+import { ABOUT_IMAGE, COMPANY_INFO, WHATSAPP_LINK } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -11,11 +11,11 @@ const AboutSection = () => {
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                alt="Nossa história" 
+                src={ABOUT_IMAGE.url}
+                alt={ABOUT_IMAGE.alt}
                 className="rounded-lg shadow-lg object-cover h-[300px] md:h-[400px] w-full"
               />
-              <div className="absolute inset-0 bg-primary/10 rounded-lg"></div>
+              <div className={`absolute inset-0 ${ABOUT_IMAGE.overlay} rounded-lg`}></div>
             </div>
           </div>
           
