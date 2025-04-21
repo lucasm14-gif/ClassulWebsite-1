@@ -78,14 +78,14 @@ export const products: Product[] = [
   },
   {
     id: "5",
-    slug: "pins",
-    name: "Pins",
-    shortDescription: "Pins personalizados para sua empresa ou evento.",
-    description: "Pins personalizados para identificação corporativa, brindes ou colecionáveis. Produzidos com materiais de qualidade e acabamento impecável para representar sua marca com excelência.",
+    slug: "pins-e-bottons",
+    name: "Pins e Bottons",
+    shortDescription: "Pins e bottons personalizados para sua empresa ou evento.",
+    description: "Pins e bottons personalizados para identificação corporativa, eventos, brindes ou colecionáveis. Produzidos com materiais de qualidade e acabamento impecável para representar sua marca com excelência.",
     images: [
-      "https://images.unsplash.com/photo-1563290401-6eb49ae15e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1545231590-d0af0138d55a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      "https://images.unsplash.com/photo-1573215131483-9fcda5a1acf3?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/02/classul1-removebg-preview.png",
+      "https://images.unsplash.com/photo-1588345450104-989024892695?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      "https://images.unsplash.com/photo-1590424263357-85833b920672?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     ],
     featured: false,
     options: {
@@ -94,17 +94,27 @@ export const products: Product[] = [
   },
   {
     id: "6",
-    slug: "bottons",
-    name: "Bottons",
-    shortDescription: "Bottons customizados para identificação e marketing.",
-    description: "Bottons personalizados ideais para eventos, campanhas de marketing ou identificação. Produzidos em diversos tamanhos e formatos, com impressão de alta qualidade para destacar sua mensagem ou marca.",
+    slug: "placa-quadro-veludo",
+    name: "Placa Quadro Fundo em Veludo",
+    shortDescription: "Placas com acabamento elegante em veludo.",
+    description: "Placas comemorativas com fundo em veludo, proporcionando um acabamento sofisticado e elegante. Ideal para homenagens especiais, certificados e reconhecimentos corporativos.",
     images: [
-      "https://brindideias.com.br/wp/wp-content/uploads/2025/02/classul1-removebg-preview.png",
-      "https://images.unsplash.com/photo-1588345450104-989024892695?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      "https://images.unsplash.com/photo-1590424263357-85833b920672?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
+      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png"
     ],
     featured: false,
     options: {
+      sizes: [
+        { id: "9x14", label: "9x14cm" },
+        { id: "12x17", label: "12x17cm" },
+        { id: "14x20", label: "14x20cm" }
+      ],
+      colors: [
+        { id: "burgundy", label: "Bordô", color: "bg-red-900" },
+        { id: "navy", label: "Azul Marinho", color: "bg-blue-900" },
+        { id: "black", label: "Preto", color: "bg-black" }
+      ],
       hasQuantity: true
     }
   }
