@@ -67,9 +67,9 @@ export const products: Product[] = [
     shortDescription: "Premie os melhores com medalhas de excelente acabamento.",
     description: "Medalhas personalizadas para premiações esportivas, acadêmicas ou corporativas. Disponíveis em diversos formatos, com opção de gravação personalizada para tornar o reconhecimento ainda mais especial.",
     images: [
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1574509324730-7377033e93e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      "https://images.unsplash.com/photo-1587909209111-5097ee578ec3?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/Ouro_medalha__57619_zoom__92154_std-500x554-1.jpg",
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/Ouro_medalha__57619_zoom__92154_std-500x554-1.jpg",
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/Ouro_medalha__57619_zoom__92154_std-500x554-1.jpg"
     ],
     featured: false,
     options: {
@@ -99,9 +99,9 @@ export const products: Product[] = [
     shortDescription: "Placas com acabamento elegante em veludo para sua empresa ou evento.",
     description: "Placas comemorativas com fundo em veludo, proporcionando um acabamento sofisticado e elegante. Ideal para homenagens especiais, certificados e reconhecimentos corporativos.",
     images: [
-      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
-      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
-      "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png"
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/placa_fundo_vermelho__99938_zoom__76642_zoom-500x554-1.jpg",
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/placa_fundo_vermelho__99938_zoom__76642_zoom-500x554-1.jpg",
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/placa_fundo_vermelho__99938_zoom__76642_zoom-500x554-1.jpg"
     ],
     featured: false,
     options: {

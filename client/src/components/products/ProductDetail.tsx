@@ -55,7 +55,7 @@ const ProductDetail = ({ slug }: ProductDetailProps) => {
             <Skeleton className="h-5 w-full mb-6" />
             <Skeleton className="h-5 w-full mb-2" />
             <Skeleton className="h-5 w-full mb-8" />
-            
+
             <Skeleton className="h-6 w-32 mb-3" />
             <div className="grid grid-cols-4 gap-3 mb-6">
               <Skeleton className="h-12 w-full rounded-lg" />
@@ -63,14 +63,14 @@ const ProductDetail = ({ slug }: ProductDetailProps) => {
               <Skeleton className="h-12 w-full rounded-lg" />
               <Skeleton className="h-12 w-full rounded-lg" />
             </div>
-            
+
             <Skeleton className="h-6 w-32 mb-3" />
             <div className="grid grid-cols-3 gap-3 mb-6">
               <Skeleton className="h-12 w-full rounded-lg" />
               <Skeleton className="h-12 w-full rounded-lg" />
               <Skeleton className="h-12 w-full rounded-lg" />
             </div>
-            
+
             <Skeleton className="h-14 w-full rounded-lg mt-8" />
           </div>
         </div>
@@ -104,7 +104,7 @@ const ProductDetail = ({ slug }: ProductDetailProps) => {
           </div>
         </div>
       </div>
-      
+
       <section className="py-12">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-12">
@@ -115,14 +115,14 @@ const ProductDetail = ({ slug }: ProductDetailProps) => {
               updateOptions={updateOptions}
             />
           </div>
-          
+
           {/* Product details section */}
           <div className="mt-16">
             <Tabs defaultValue="description" className="w-full">
               <TabsList className="grid w-full md:w-auto grid-cols-3 md:inline-flex">
                 <TabsTrigger value="description">Descrição</TabsTrigger>
                 <TabsTrigger value="features">Características</TabsTrigger>
-                <TabsTrigger value="delivery">Entrega</TabsTrigger>
+                <TabsTrigger value="cases">Estojos</TabsTrigger>
               </TabsList>
               <TabsContent value="description" className="mt-6">
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
