@@ -118,31 +118,4 @@ export const products: Product[] = [
       hasQuantity: true
     }
   }
-{
-    id: "7",
-    slug: "estojos",
-    name: "Estojos",
-    shortDescription: "Estojos elegantes para proteger e apresentar suas placas e medalhas.",
-    description: "Estojos de alta qualidade, desenvolvidos especialmente para armazenar e apresentar placas de homenagem, medalhas e troféus. Disponíveis em diferentes cores e tamanhos para atender às suas necessidades.",
-    images: [
-      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo-azul-marinho.jpg",
-      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo-preto.jpg",
-      "https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo-bordo.jpg"
-    ],
-    featured: false,
-    options: {
-      sizes: [
-        { id: "9x14", label: "9x14cm" },
-        { id: "12x17", label: "12x17cm" },
-        { id: "14x20", label: "14x20cm" },
-        { id: "16x25", label: "16x25cm" }
-      ],
-      colors: [
-        { id: "navy", label: "Azul Marinho", color: "bg-blue-900" },
-        { id: "black", label: "Preto", color: "bg-black" },
-        { id: "burgundy", label: "Bordô", color: "bg-red-900" }
-      ],
-      hasQuantity: true
-    }
-  }
 ];
