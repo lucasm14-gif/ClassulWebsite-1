@@ -159,22 +159,32 @@ const ProductDetail = ({ slug }: ProductDetailProps) => {
                   </div>
                 </div>
               </TabsContent>
-              <TabsContent value="delivery" className="mt-6">
+              <TabsContent value="cases" className="mt-6">
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">Informações de entrega</h3>
-                  <div className="flex items-start mb-4">
-                    <div className="p-2 bg-primary/10 rounded-full mr-3">
-                      <Clock className="text-primary h-5 w-5" />
+                  <h3 className="text-xl font-semibold mb-4 text-gray-800">Estojos Disponíveis</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex items-start">
+                      <img src="https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo_azul_marinho.jpg" alt="Estojo Azul Marinho" className="w-24 h-24 object-cover rounded-lg mr-4" />
+                      <div>
+                        <h4 className="font-medium">Estojo Azul Marinho</h4>
+                        <p className="text-sm text-gray-600">Acabamento em veludo premium com interior acolchoado</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium">Tempo de produção</h4>
-                      <p className="text-sm text-gray-600">Consulte o prazo de produção ao solicitar o orçamento</p>
+                    <div className="flex items-start">
+                      <img src="https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo_vermelho.jpg" alt="Estojo Vermelho" className="w-24 h-24 object-cover rounded-lg mr-4" />
+                      <div>
+                        <h4 className="font-medium">Estojo Vermelho</h4>
+                        <p className="text-sm text-gray-600">Veludo premium com acabamento elegante</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <img src="https://brindideias.com.br/wp/wp-content/uploads/2025/04/estojo_preto.jpg" alt="Estojo Preto" className="w-24 h-24 object-cover rounded-lg mr-4" />
+                      <div>
+                        <h4 className="font-medium">Estojo Preto</h4>
+                        <p className="text-sm text-gray-600">Clássico e sofisticado com interior protetor</p>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-gray-600">
-                    Dispomos de entrega para todo o Brasil. Para receber mais informações sobre prazos e valores de frete, 
-                    entre em contato através do WhatsApp.
-                  </p>
                 </div>
               </TabsContent>
             </Tabs>
