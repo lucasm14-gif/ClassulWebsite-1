@@ -99,7 +99,7 @@ export const products: Product[] = [
     shortDescription: "Bottons customizados para identificação e marketing.",
     description: "Bottons personalizados ideais para eventos, campanhas de marketing ou identificação. Produzidos em diversos tamanhos e formatos, com impressão de alta qualidade para destacar sua mensagem ou marca.",
     images: [
-      "https://images.unsplash.com/photo-1547586877-0351a7143cde?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "https://brindideias.com.br/wp/wp-content/uploads/2025/02/classul1-removebg-preview.png",
       "https://images.unsplash.com/photo-1588345450104-989024892695?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
       "https://images.unsplash.com/photo-1590424263357-85833b920672?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
     ],
