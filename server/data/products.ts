@@ -96,7 +96,7 @@ export const products: Product[] = [
     id: "6",
     slug: "placa-quadro-veludo",
     name: "Placa Quadro Fundo em Veludo",
-    shortDescription: "Placas com acabamento elegante em veludo.",
+    shortDescription: "Placas com acabamento elegante em veludo para sua empresa ou evento.",
     description: "Placas comemorativas com fundo em veludo, proporcionando um acabamento sofisticado e elegante. Ideal para homenagens especiais, certificados e reconhecimentos corporativos.",
     images: [
       "https://brindideias.com.br/wp/wp-content/uploads/2024/12/Design-sem-nome-15.png",
